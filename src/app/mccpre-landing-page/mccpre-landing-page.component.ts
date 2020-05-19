@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MccService } from '../mccservice.service';
-import {report} from '../report';
-import { ThrowStmt } from '@angular/compiler';
+import { MccService } from './mccservice.service';
+import { ReportVO } from './report-vo';
+import { SavedReportVO } from './saved-report-vo';
 
 @Component({
   selector: 'app-mccpre-landing-page',
@@ -9,42 +9,31 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./mccpre-landing-page.component.css']
 })
 export class MCCPreLandingPageComponent implements OnInit {
-Reportstart = 'Start a New Report';
-or ='OR';
-Resume = 'Resume a Saved Report'
-date:string ='';
-testdata: report[] 
+  report: ReportVO = {
+    date: '',
+    reportType: ''
+  };
 
-reportType: string = '';
-r: report[];
-re: report = {
-  date: "",
-  reportType: ""
-};
+  savedReports: SavedReportVO[];
 
-constructor(private Mccservices: MccService) { }
+  constructor(private mccservices: MccService) { }
 
   ngOnInit(): void {
-    
+    this.loadInitialSavedReports();
   }
- 
-  onSelect(): void {
-    
-    this.postrequest()
-  
- 
-    alert(this.re.date +"  " + this.re.reportType);
-    
+
+  processReportDate(): void {
+    this.mccservices.processReportDate(this.report)
+      .subscribe(data => {
+        console.log(data);
+        this.loadInitialSavedReports();
+      });
   }
-     
-     
-      postrequest():void {
-      this.Mccservices.sendPostRequestWithParameters2(this.re)
-      .subscribe(reportaa => this.testdata = reportaa);
-      alert('post request sent')
-      }
 
-
-    }
+  loadInitialSavedReports(): void {
+    this.mccservices.getSavedReports()
+    .subscribe(data => this.savedReports = data);
+  }
+}
 
 
