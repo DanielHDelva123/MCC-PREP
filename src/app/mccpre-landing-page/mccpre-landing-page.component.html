@@ -1,0 +1,41 @@
+<br>
+
+<h5 id ="h5">{{Reportstart}} </h5>
+<h5 id ="h6">{{or}} </h5>
+<h5 id ="h7">{{Resume}} </h5>
+       <h2 id="arrow"></h2>
+       <br>
+
+
+       <ul class="heroes">
+           
+<input [(ngModel)]=" re.date" type="date" id="dt"> <br>
+<small id="message">Select a date for the report</small> <br>
+<h2 id="arrow2"></h2><br><br><br><br>
+<select  [(ngModel)]="re.reportType"  id="rectype" selected="selected" value = "Select" >
+<option value="" selected disabled hidden>Select</option>
+<option  value="B" >B</option>
+<option  value= "Qtr">Qtr</option>
+            
+</select>
+
+<span class="badge">{{re.date}}</span> 
+<span class="badge">{{re.reportType}}</span> 
+<small id="message2">Select type of report</small> <br>
+            </ul>
+            <h2 id="arrow3"></h2>
+
+
+            <button class="button" (click)="onSelect()">START NEW</button>
+
+
+
+            <br><br>
+<div class ='resumereportbox'>
+            <ul class="report">
+              <li *ngFor="let reportt of r">
+                <span class="badge">{{reportt.id}}</span> {{reportt.displayname}}
+              </li>
+            </ul>
+       </div>
+       <button class="button2" (click)="onSelect()">RESUME</button>

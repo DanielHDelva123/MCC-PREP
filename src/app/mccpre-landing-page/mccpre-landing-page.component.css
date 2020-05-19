@@ -1,0 +1,113 @@
+#arrow:after {
+   
+    content: ' \2193';
+    position: absolute;
+    left: 260px;
+    top: 90px;
+}
+#arrow2:after {
+   
+    content: ' \2193';
+    position: absolute;
+    left: 260px; 
+    height:17px; 
+    
+    top: 200px;
+}
+#h5 {
+    position: absolute;
+    left: 210px;
+    top: 40px;
+    
+  }
+  #h6 {
+    position: absolute;
+    left: 600px;
+    top: 40px;
+    
+  }
+  #h7 {
+    position: absolute;
+    left: 850px;
+    top: 40px;
+    
+  }
+#rectype{
+    position: absolute;
+    height:17px; 
+    width:150px;  
+    left: 200px; 
+   
+   }
+   #dt{
+    position: absolute;
+    left: 200px; 
+    height:17px; 
+    width:150px;   
+    top: 150px;
+   }
+
+   .resumereportbox{
+    position: absolute;
+    left: 850px;
+    top: 90px;
+    height:250px; 
+    width:150px;
+    border-style: double;
+   }
+   #message{
+
+    position: absolute;
+    top: 173px;
+    left: 210px; 
+    font-size: 40%;
+   }
+   #message2{
+
+    position: absolute;
+    top: 275px;
+    left: 210px; 
+    font-size: 40%;
+   }
+   #arrow3:after{
+    content: ' \2193';
+    position: absolute;
+    top: 300px;
+    left: 260px; 
+
+   }
+
+
+
+   .button {
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    top: 350px;
+    left: 185px; 
+    font-size: 60%;
+    width:180px;   
+    
+  }
+  .button2 {
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    left: 830px;
+    top: 350px;
+    font-size: 60%;
+    width:180px;   
+    
+  }
