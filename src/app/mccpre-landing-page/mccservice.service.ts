@@ -4,6 +4,7 @@ import { ReportVO } from './report-vo';
 import { HttpParams } from "@angular/common/http";;
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SavedReportVO } from './saved-report-vo';
+import {Reportpagetwovo} from '../mccprepagetwo/reportpagetwo-vo';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,4 +20,12 @@ export class MccService {
   public getSavedReports(): Observable<SavedReportVO[]> {
     return this.httpClient.get<SavedReportVO[]>(this.mccBaseUrl + 'get/saved-reports');
   }
+
+
+  public getSavedReportsdata(): Observable<Reportpagetwovo[]> {
+    return this.httpClient.get<Reportpagetwovo[]>(this.mccBaseUrl + 'get/report/4ebff664-670d-43bc-990b-6e2de688c90f');
+  }
+
+
+
 }

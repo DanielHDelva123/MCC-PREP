@@ -1,0 +1,34 @@
+<div class="resumereportbox">
+    <ul class="savedReports">
+      <li *ngFor="let reports of report">
+     
+        <b> <a class="badge"   routerLink="/mccprepagetwo">{{  reports.groupName}}  <br>  <br>      </a> </b>
+ <ul>
+        <li *ngFor="let mccprepdata of reports.mccPrepDataList"> <label>mccPrepId: </label> {{mccprepdata.mccPrepId}} <br> <br> <br> 
+            <label>prcedenceOrder: </label> {{mccprepdata.prcedenceOrder}} <br> <br> <br> 
+            <label>ownershipOrganization: </label>{{mccprepdata.ownershipOrganization}} <br> <br> <br> 
+            <label>ucmRecordIdentifier: </label>  {{mccprepdata.ucmRecordIdentifier}} <br> <br> <br> 
+            <label>primarySubject: </label> {{mccprepdata.primarySubject}} <br> <br> <br> 
+            <label>primaryNpi: </label> {{mccprepdata.primaryNpi}} <br> <br> <br> 
+            <label>mccMeetingDate: </label> {{mccprepdata.mccMeetingDate}} <br> <br> <br> 
+            <label>mccStatus: </label> {{mccprepdata.mccStatus}} <br> <br> <br> 
+            <label>specialtyTypeName: </label> {{mccprepdata.specialtyTypeName}} <br> <br> <br> 
+            <label>actionDetail: </label> {{mccprepdata.actionDetail}} <br> <br> <br> 
+            <label>mccPrepIdassignedEntity: </label> {{mccprepdata.mccPrepIdassignedEntity}} <br> <br> <br> 
+            <label>city: </label> {{mccprepdata.city}} <br> <br> <br> 
+            <label>sixMonthPaid: </label> {{mccprepdata.sixMonthPaid}} <br> <br> <br> 
+            <label>twelveMonthPaid: </label> {{mccprepdata.twelveMonthPaid}} <br> <br> <br> 
+            <label>amountOnPaymentFloor: </label> {{mccprepdata.amountOnPaymentFloor}} <br> <br> <br> 
+            <label>executiveSummaryText: </label> {{mccprepdata.executiveSummaryText}} <br> <br> <br> 
+            <label>region: </label> {{mccprepdata.region}} <br> <br> <br> 
+            <label>notes: </label> {{mccprepdata.notes}} <br> <br> <br> 
+            <label>enrollment: </label> {{mccprepdata.enrollment}} <br> <br> <br> 
+          
+
+            </li>
+        </ul>
+         </li>
+    </ul>
+  </div>
+
+ 

@@ -5,11 +5,13 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MCCPreLandingPageComponent } from './mccpre-landing-page/mccpre-landing-page.component';
+import { MccprepagetwoComponent } from './mccprepagetwo/mccprepagetwo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MCCPreLandingPageComponent
+    MCCPreLandingPageComponent,
+    MccprepagetwoComponent
   ],
   imports: [
     BrowserModule,

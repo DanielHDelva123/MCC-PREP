@@ -9,6 +9,7 @@ import { SavedReportVO } from './saved-report-vo';
   styleUrls: ['./mccpre-landing-page.component.css']
 })
 export class MCCPreLandingPageComponent implements OnInit {
+  title = 'MCC Prep';
   report: ReportVO = {
     date: '',
     reportType: ''
