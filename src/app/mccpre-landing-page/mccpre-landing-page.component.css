@@ -88,7 +88,17 @@ background-repeat: no-repeat;
 
    }
 
-
+   .container {
+    position: absolute;
+    left: 850px;
+    top: 90px;
+    display: flex;
+    width:150px;
+    flex-grow: 1; 
+    margin: auto;
+    background-color: white;
+    border-style: double;
+  }
 
    .button {
     background-color: blue; 
@@ -116,7 +126,7 @@ background-repeat: no-repeat;
     display: inline-block;
     font-size: 10px;
     position: absolute;
-    left: 830px;
+    left: 0px;
     top: 850px;
     font-size: 60%;
     width:180px;   

@@ -1,34 +1,72 @@
-<div class="resumereportbox">
-    <ul class="savedReports">
-      <li *ngFor="let reports of report">
+<div class= "flex-container">
+    <ul class= "flex-container">
+      <li #messageEl   *ngFor="let reports of report" [attr.data-reports-groupName]="reports.groupName"  >
      
-        <b> <a class="badge"   routerLink="/mccprepagetwo">{{  reports.groupName}}  <br>  <br>      </a> </b>
- <ul>
-        <li *ngFor="let mccprepdata of reports.mccPrepDataList"> <label>mccPrepId: </label> {{mccprepdata.mccPrepId}} <br> <br> <br> 
-            <label>prcedenceOrder: </label> {{mccprepdata.prcedenceOrder}} <br> <br> <br> 
-            <label>ownershipOrganization: </label>{{mccprepdata.ownershipOrganization}} <br> <br> <br> 
-            <label>ucmRecordIdentifier: </label>  {{mccprepdata.ucmRecordIdentifier}} <br> <br> <br> 
-            <label>primarySubject: </label> {{mccprepdata.primarySubject}} <br> <br> <br> 
-            <label>primaryNpi: </label> {{mccprepdata.primaryNpi}} <br> <br> <br> 
-            <label>mccMeetingDate: </label> {{mccprepdata.mccMeetingDate}} <br> <br> <br> 
-            <label>mccStatus: </label> {{mccprepdata.mccStatus}} <br> <br> <br> 
-            <label>specialtyTypeName: </label> {{mccprepdata.specialtyTypeName}} <br> <br> <br> 
-            <label>actionDetail: </label> {{mccprepdata.actionDetail}} <br> <br> <br> 
-            <label>mccPrepIdassignedEntity: </label> {{mccprepdata.mccPrepIdassignedEntity}} <br> <br> <br> 
-            <label>city: </label> {{mccprepdata.city}} <br> <br> <br> 
-            <label>sixMonthPaid: </label> {{mccprepdata.sixMonthPaid}} <br> <br> <br> 
-            <label>twelveMonthPaid: </label> {{mccprepdata.twelveMonthPaid}} <br> <br> <br> 
-            <label>amountOnPaymentFloor: </label> {{mccprepdata.amountOnPaymentFloor}} <br> <br> <br> 
-            <label>executiveSummaryText: </label> {{mccprepdata.executiveSummaryText}} <br> <br> <br> 
-            <label>region: </label> {{mccprepdata.region}} <br> <br> <br> 
-            <label>notes: </label> {{mccprepdata.notes}} <br> <br> <br> 
-            <label>enrollment: </label> {{mccprepdata.enrollment}} <br> <br> <br> 
-          
+        <b > <a    routerLink="/mccprepagetwo"  >{{reports.groupName}}  </a>  &nbsp;   </b>
+        <input  [(ngModel)]="oorg" type="text" id="text"  />
+        <button  class="button"(click)="setorg(messageEl)" >Displayall</button> <span>&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span>
+<!--<span>{{oorg}}</span>-->
+        <ul class="flex-container2">
+          <div  *ngIf="reports.mccPrepDataList.ownershipOrganization == oorg  || reports.groupName == oorg  " >
+        <li *ngFor="let mccprepdata of reports.mccPrepDataList"  > 
+          <table style="width:100%"   >
 
+            <tr   >
+          
+           <th  class="flex-container3">MccPrepId</th>
+              <th  class="flex-container4">PrcedenceOrder:</th> 
+              <th  class="flex-container5">OwnershipOrganization</th>
+              <th  class="flex-container6">UcmRecordIdentifier</th>
+              <th  class="flex-container7">PrimarySubject:</th> 
+              <th  class="flex-container8">PrimaryNpi</th>
+              <th  class="flex-container9">MccMeetingDate</th>
+              <th class="flex-container10">MccStatus</th> 
+              <th  class="flex-container11">SpecialtyTypeName</th>
+              <th  class="flex-container12">ActionDetail</th>
+              <th  class="flex-container13">MccPrepIdassignedEntity</th> 
+              <th  class="flex-container14">City</th>
+              <th  class="flex-container15">SixMonthPaid</th>
+              <th  class="flex-container16">TwelveMonthPaid</th> 
+              <th  class="flex-container17">AmountOnPaymentFloor</th>
+              <th  class="flex-container18">ExecutiveSummaryText</th>
+              <th  class="flex-container19">Region</th> 
+              <th  class="flex-container20">Notes</th>
+              <th  class="flex-container21">Enrollment</th>
+            </tr>
+
+      <tr   >
+              <td  class="flex-container3">{{mccprepdata.mccPrepId}}</td>
+              <td  class="flex-container4">{{mccprepdata.prcedenceOrder}}</td>
+              <td  class="flex-container5">{{mccprepdata.ownershipOrganization}}</td>
+              <td  class="flex-container6">{{mccprepdata.ucmRecordIdentifier}}</td>
+              <td  class="flex-container7">{{mccprepdata.primarySubject}}</td>
+              <td  class="flex-container8">{{mccprepdata.primaryNpi}}</td>
+              <td  class="flex-container9">{{mccprepdata.mccMeetingDate}}</td>
+              <td  class="flex-container10">{{mccprepdata.mccStatus}}</td>
+              <td  class="flex-container11">{{mccprepdata.specialtyTypeName}}</td>
+              <td  class="flex-container12">{{mccprepdata.actionDetail}}</td>
+              <td  class="flex-container13">{{mccprepdata.mccPrepIdassignedEntity}}</td>
+              <td  class="flex-container14">{{mccprepdata.city}}</td>
+              <td  class="flex-container15">{{mccprepdata.sixMonthPaid}}</td>
+              <td  class="flex-container16">{{mccprepdata.twelveMonthPaid}}</td>
+              <td  class="flex-container17">{{mccprepdata.amountOnPaymentFloor}}</td>
+            <td  class="flex-container18">   </td>
+              <td  class="flex-container19">{{mccprepdata.region}}</td>
+              <td  class="flex-container20">{{mccprepdata.notes}}</td>
+              <td  class="flex-container21">{{mccprepdata.enrollment}}</td>
+              
+            </tr>
+          </table>
+          
+        <table>
+
+
+        </table>
+          
             </li>
+          </div>
         </ul>
          </li>
     </ul>
   </div>
 
- 

@@ -11,6 +11,7 @@ import {Reportpagetwovo} from '../mccprepagetwo/reportpagetwo-vo';
 export class MccService {
 
   private mccBaseUrl = 'http://localhost:8080/mcc/v1/';  // URL to web api
+  private mccBaseUrl3 = 'http://localhost:8080/mcc/v1/get/report/4ebff664-670d-43bc-990b-6e2de688c90f'
   constructor(private httpClient: HttpClient) { }
 
   public processReportDate(d1: ReportVO): Observable<string> {
@@ -28,4 +29,9 @@ export class MccService {
 
 
 
+  public getSavedReportsdataorg(org:string): Observable<Reportpagetwovo[]> {
+    return this.httpClient.get<Reportpagetwovo[]>('${this.mccBaseUrl3}/${mccPrepId}');
+    //return this.httpClient.get<Reportpagetwovo[]>('${this.mccBaseUrl3}/?.ownershipOrganization=${org}');
+  }
+  // <label>ownershipOrganization: </label>{{mccprepdata.ownershipOrganization}}
 }
