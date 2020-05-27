@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MccService } from './mccservice.service';
 import { ReportVO } from './report-vo';
 import { SavedReportVO } from './saved-report-vo';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-mccpre-landing-page',
@@ -11,9 +12,10 @@ import { SavedReportVO } from './saved-report-vo';
 export class MCCPreLandingPageComponent implements OnInit {
   title = 'MCC Prep';
   report: ReportVO = {
-    date: '',
-    reportType: ''
+    date: 'test',
+    reportType: 'test'
   };
+  
 
   savedReports: SavedReportVO[];
 
@@ -23,6 +25,9 @@ export class MCCPreLandingPageComponent implements OnInit {
     this.loadInitialSavedReports();
   }
 
+
+
+
   processReportDate(): void {
     this.mccservices.processReportDate(this.report)
       .subscribe(data => {
@@ -30,11 +35,24 @@ export class MCCPreLandingPageComponent implements OnInit {
         this.loadInitialSavedReports();
       });
   }
+ 
 
   loadInitialSavedReports(): void {
     this.mccservices.getSavedReports()
     .subscribe(data => this.savedReports = data);
   }
+  onDrop(event: CdkDragDrop<string[]>){
+
+
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+
+
+  }
 }
+
 
 

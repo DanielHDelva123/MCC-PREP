@@ -98,6 +98,9 @@ background-repeat: no-repeat;
     margin: auto;
     background-color: white;
     border-style: double;
+    flex-direction: column;
+   
+    
   }
 
    .button {
@@ -126,9 +129,10 @@ background-repeat: no-repeat;
     display: inline-block;
     font-size: 10px;
     position: absolute;
-    left: 0px;
+    left: 320px;
     top: 850px;
     font-size: 60%;
     width:180px;   
     
   }
+  

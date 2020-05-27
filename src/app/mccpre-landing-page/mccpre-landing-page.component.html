@@ -31,16 +31,23 @@
 <button class="button" (click)="processReportDate()">START NEW</button>
 
 <br /><br />
+<div class= "Zoom"></div>
 
-
-  <div class="container">
-  <ul class="savedReports">
-    <li *ngFor="let savedReport of savedReports">
-      <span class="badge">{{ savedReport.displayName }}</span> 
-    </li>
-  </ul>
+  <div class="container"
+  cdkDropList
+  #SaveDataList="cdkDropList"
+  [cdkDropListData]="savedReports"
+  (cdkDropListDropped)="onDrop($event)"
+  >
+   <mat-card *ngFor="let sv of savedReports" cdkDrag>{{sv.displayName}} </mat-card>
+      
+    
+  
   <nav>
+    <!---->
     <button class="button2" routerLink="/mccprepagetwo"> RESUME</button>
+    <!---->
+   <!---<button class="button2" routerLink="/mccprep"> RESUME</button> -->
     
   
     </nav>
@@ -48,4 +55,10 @@
 
 
 
-<router-outlet></router-outlet>
+
+
+
+
+
+  
+  

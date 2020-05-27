@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MccService } from '../mccpre-landing-page/mccservice.service';
 import {Reportpagetwovo} from './reportpagetwo-vo';
-
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-mccprepagetwo',
   templateUrl: './mccprepagetwo.component.html',
   styleUrls: ['./mccprepagetwo.component.css']
 })
 export class MccprepagetwoComponent implements OnInit {
+
   report: Reportpagetwovo [];
   oorg = '';
   reportorg: Reportpagetwovo [];
+  
   constructor(private mccservices: MccService) { }
 
   ngOnInit(): void {
@@ -31,5 +33,17 @@ export class MccprepagetwoComponent implements OnInit {
 setorg(el): void {
 this.oorg= el.getAttribute('reports-groupName')
 }
+
+onDrop(event: CdkDragDrop<string[]>){
+
+
+  if (event.previousContainer === event.container) {
+    moveItemInArray(event.container.data,
+      event.previousIndex,
+      event.currentIndex);
+  }
+}
+
+
 
 }

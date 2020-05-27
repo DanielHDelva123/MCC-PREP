@@ -7,8 +7,42 @@
         <button  class="button"(click)="setorg(messageEl)" >Displayall</button> <span>&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span>
 <!--<span>{{oorg}}</span>-->
         <ul class="flex-container2">
-          <div  *ngIf="reports.mccPrepDataList.ownershipOrganization == oorg  || reports.groupName == oorg  " >
-        <li *ngFor="let mccprepdata of reports.mccPrepDataList"  > 
+          <div  *ngIf="reports.mccPrepDataList.ownershipOrganization == oorg  || reports.groupName == oorg  " 
+          cdkDropList
+  #SaveDataList="cdkDropList"
+  [cdkDropListData]="reports.mccPrepDataList"
+  (cdkDropListDropped)="onDrop($event)" >
+          <table style="width:100%"   >
+          <mat-card *ngFor="let mccprepdata of reports.mccPrepDataList" cdkDrag>
+           
+              <tr>
+             <th>
+              <mat-card-title>MccPrepId</mat-card-title>
+             </th>
+             <th>
+<mat-card-title>PrcedenceOrder</mat-card-title>
+</th>
+</tr>
+ <tr>
+              <td>
+                <mat-card-subtitle>{{mccprepdata.mccPrepId}}</mat-card-subtitle>
+              </td>
+
+               <td>
+                <mat-card-subtitle>{{mccprepdata.prcedenceOrder}}</mat-card-subtitle>
+               </td>
+              </tr>
+        
+          
+        
+         
+          
+      
+          </mat-card>
+        </table>
+        
+        <!--
+          <li *ngFor="let mccprepdata of reports.mccPrepDataList"  > 
           <table style="width:100%"   >
 
             <tr   >
@@ -58,15 +92,13 @@
             </tr>
           </table>
           
-        <table>
-
-
-        </table>
-          
             </li>
+          -->
           </div>
         </ul>
          </li>
     </ul>
   </div>
 
+      
+  
