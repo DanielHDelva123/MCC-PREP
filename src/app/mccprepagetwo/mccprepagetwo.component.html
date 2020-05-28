@@ -2,100 +2,87 @@
     <ul class= "flex-container">
       <li #messageEl   *ngFor="let reports of report" [attr.data-reports-groupName]="reports.groupName"  >
      
-        <b > <a    routerLink="/mccprepagetwo"  >{{reports.groupName}}  </a>  &nbsp;   </b>
+        <b > <a    routerLink="/mccprep"  >{{reports.groupName}}  </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </b>
+        
+      
         <input  [(ngModel)]="oorg" type="text" id="text"  />
         <button  class="button"(click)="setorg(messageEl)" >Displayall</button> <span>&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span>
-<!--<span>{{oorg}}</span>-->
+
         <ul class="flex-container2">
-          <div  *ngIf="reports.mccPrepDataList.ownershipOrganization == oorg  || reports.groupName == oorg  " 
-          cdkDropList
-  #SaveDataList="cdkDropList"
-  [cdkDropListData]="reports.mccPrepDataList"
-  (cdkDropListDropped)="onDrop($event)" >
-          <table style="width:100%"   >
-          <mat-card *ngFor="let mccprepdata of reports.mccPrepDataList" cdkDrag>
-           
-              <tr>
-             <th>
-              <mat-card-title>MccPrepId</mat-card-title>
-             </th>
-             <th>
-<mat-card-title>PrcedenceOrder</mat-card-title>
-</th>
-</tr>
- <tr>
-              <td>
-                <mat-card-subtitle>{{mccprepdata.mccPrepId}}</mat-card-subtitle>
-              </td>
-
-               <td>
-                <mat-card-subtitle>{{mccprepdata.prcedenceOrder}}</mat-card-subtitle>
-               </td>
-              </tr>
-        
-          
-        
          
+          <div  *ngIf="reports.mccPrepDataList.ownershipOrganization == oorg  || reports.groupName == oorg  " >
+    
           
-      
-          </mat-card>
+
+          <table class="table">
+            <thead>
+                <tr >
+                  <th  class="flex-container3">MccPrepId</th>
+                  <th  class="flex-container4">PrcedenceOrder:</th> 
+                  <th  class="flex-container5">OwnershipOrganization</th>
+                  <th  class="flex-container6">UcmRecordIdentifier</th>
+                  <th  class="flex-container7">PrimarySubject:</th> 
+                  <th  class="flex-container8">PrimaryNpi</th>
+                  <th  class="flex-container9">MccMeetingDate</th>
+                  <th class="flex-container10">MccStatus</th> 
+                  <th  class="flex-container11">SpecialtyTypeName</th>
+                  <th  class="flex-container12">ActionDetail</th>
+                  <th  class="flex-container13">MccPrepIdassignedEntity</th> 
+                  <th  class="flex-container14">City</th>
+                  <th  class="flex-container15">SixMonthPaid</th>
+                  <th  class="flex-container16">TwelveMonthPaid</th> 
+                  <th  class="flex-container17">AmountOnPaymentFloor</th>
+                  <th  class="flex-container18">ExecutiveSummaryText</th>
+                  <th  class="flex-container19">Region</th> 
+                  <th  class="flex-container20">Notes</th>
+                  <th  class="flex-container21">Enrollment</th>
+                </tr>
+            </thead>
+
+           
+
+            <tbody cdkDropList
+                    (cdkDropListDropped)="onDrop($event)"
+                   
+                    [cdkDropListData]="reports.mccPrepDataList">
+                <tr *ngFor="let mccprepdata of reports.mccPrepDataList" 
+                    cdkDrag
+                    cdkDragLockAxis="y">
+                  <td>{{mccprepdata.mccPrepId}}</td>
+                    <td>{{mccprepdata.prcedenceOrder}}</td>
+                    <td>{{mccprepdata.ownershipOrganization}}</td>
+                    <td>{{mccprepdata.ucmRecordIdentifier}}</td>
+                    <td>{{mccprepdata.primarySubject}}</td>
+                    <td  class="flex-container8">{{mccprepdata.primaryNpi}}</td>
+                    <td  class="flex-container9">{{mccprepdata.mccMeetingDate}}</td>
+                    <td  class="flex-container10">{{mccprepdata.mccStatus}}</td>
+                    <td  class="flex-container11">{{mccprepdata.specialtyTypeName}}</td>
+                    <td  class="flex-container12">{{mccprepdata.actionDetail}}</td>
+                    <td  class="flex-container13">{{mccprepdata.mccPrepIdassignedEntity}}</td>
+                    <td  class="flex-container14">{{mccprepdata.city}}</td>
+                    <td  class="flex-container15">{{mccprepdata.sixMonthPaid}}</td>
+                    <td  class="flex-container16">{{mccprepdata.twelveMonthPaid}}</td>
+                    <td  class="flex-container17">{{mccprepdata.amountOnPaymentFloor}}</td>
+                  <td  class="flex-container18">   </td>
+                    <td  class="flex-container19">{{mccprepdata.region}}</td>
+                    <td  class="flex-container20">{{mccprepdata.notes}}</td>
+                    <td  class="flex-container21">{{mccprepdata.enrollment}}</td>
+                </tr>
+            </tbody>
         </table>
-        
-        <!--
-          <li *ngFor="let mccprepdata of reports.mccPrepDataList"  > 
-          <table style="width:100%"   >
 
-            <tr   >
-          
-           <th  class="flex-container3">MccPrepId</th>
-              <th  class="flex-container4">PrcedenceOrder:</th> 
-              <th  class="flex-container5">OwnershipOrganization</th>
-              <th  class="flex-container6">UcmRecordIdentifier</th>
-              <th  class="flex-container7">PrimarySubject:</th> 
-              <th  class="flex-container8">PrimaryNpi</th>
-              <th  class="flex-container9">MccMeetingDate</th>
-              <th class="flex-container10">MccStatus</th> 
-              <th  class="flex-container11">SpecialtyTypeName</th>
-              <th  class="flex-container12">ActionDetail</th>
-              <th  class="flex-container13">MccPrepIdassignedEntity</th> 
-              <th  class="flex-container14">City</th>
-              <th  class="flex-container15">SixMonthPaid</th>
-              <th  class="flex-container16">TwelveMonthPaid</th> 
-              <th  class="flex-container17">AmountOnPaymentFloor</th>
-              <th  class="flex-container18">ExecutiveSummaryText</th>
-              <th  class="flex-container19">Region</th> 
-              <th  class="flex-container20">Notes</th>
-              <th  class="flex-container21">Enrollment</th>
-            </tr>
 
-      <tr   >
-              <td  class="flex-container3">{{mccprepdata.mccPrepId}}</td>
-              <td  class="flex-container4">{{mccprepdata.prcedenceOrder}}</td>
-              <td  class="flex-container5">{{mccprepdata.ownershipOrganization}}</td>
-              <td  class="flex-container6">{{mccprepdata.ucmRecordIdentifier}}</td>
-              <td  class="flex-container7">{{mccprepdata.primarySubject}}</td>
-              <td  class="flex-container8">{{mccprepdata.primaryNpi}}</td>
-              <td  class="flex-container9">{{mccprepdata.mccMeetingDate}}</td>
-              <td  class="flex-container10">{{mccprepdata.mccStatus}}</td>
-              <td  class="flex-container11">{{mccprepdata.specialtyTypeName}}</td>
-              <td  class="flex-container12">{{mccprepdata.actionDetail}}</td>
-              <td  class="flex-container13">{{mccprepdata.mccPrepIdassignedEntity}}</td>
-              <td  class="flex-container14">{{mccprepdata.city}}</td>
-              <td  class="flex-container15">{{mccprepdata.sixMonthPaid}}</td>
-              <td  class="flex-container16">{{mccprepdata.twelveMonthPaid}}</td>
-              <td  class="flex-container17">{{mccprepdata.amountOnPaymentFloor}}</td>
-            <td  class="flex-container18">   </td>
-              <td  class="flex-container19">{{mccprepdata.region}}</td>
-              <td  class="flex-container20">{{mccprepdata.notes}}</td>
-              <td  class="flex-container21">{{mccprepdata.enrollment}}</td>
-              
-            </tr>
-          </table>
-          
-            </li>
-          -->
+
+
+
+
+
+
+
           </div>
+          
         </ul>
+         
          </li>
     </ul>
   </div>

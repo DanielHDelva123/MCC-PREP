@@ -1,4 +1,42 @@
 <div class="mat-elevation-z8">
+  <div class= "flex-container">
+    <ul class= "flex-container">
+      <li #messageEl   *ngFor="let reports of report" [attr.data-reports-groupName]="reports.groupName"  >
+     
+        <b > <a    routerLink="/mccprepagetwo"  >{{reports.groupName}} </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </b>
+       
+        
+
+
+        
+ 
+      </li>
+    </ul>
+  </div>
+
+  <div  
+  cdkDropList
+#SaveDataList="cdkDropList"
+[cdkDropListData]="report"
+(cdkDropListDropped)="onDrop($event)" >
+
+<mat-card *ngFor="let mccprepdata of report" cdkDrag>
+<mat-card-title>MccPrepgroup</mat-card-title>
+
+<mat-card-subtitle>{{mccprepdata.groupName}}</mat-card-subtitle>
+  
+
+  
+</mat-card>
+
+
+
+
+
+
+
+
+ 
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- Id Column -->
     <ng-container matColumnDef="id">
@@ -7,10 +45,21 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>title</th>
+      <td mat-cell *matCellDef="let row">{{report[0].groupName}}</td>
     </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>age</th>
+      <td mat-cell *matCellDef="let row">{{row.age}}</td>
+    </ng-container>
+
+    <!--<ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>data</th>
+      <td mat-cell *matCellDef="let row">{{row.groupName}}</td>
+    </ng-container>
+  -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -22,4 +71,11 @@
       [pageSize]="50"
       [pageSizeOptions]="[25, 50, 100, 250]">
   </mat-paginator>
+
+
+
+</div>
+
+
+
 </div>

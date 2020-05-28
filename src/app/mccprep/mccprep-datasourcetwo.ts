@@ -4,14 +4,15 @@ import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import {MCCPREPComponent} from './mccprep.component';
+import {Reportpagetwovo} from './reportpagetwo-vo';
 // TODO: Replace this with your own data model type
 export interface MCCPREPItem {
   title: string;
   id: number;
   age: number;
- 
-}
 
+}
+FetchData: MCCPREPComponent;
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: MCCPREPItem[] = [
   {id: 1, title: 'Hydrogen',age: 30},
@@ -20,20 +21,24 @@ const EXAMPLE_DATA: MCCPREPItem[] = [
 
 
 ];
+
+
+const EXAMPLE_DATA2:Reportpagetwovo[] = this.FetchData.report;
 /**
  * Data source for the MCCPREP view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class MCCPREPDataSource extends DataSource<MCCPREPItem> {
-  data: MCCPREPItem[] = EXAMPLE_DATA;
-  paginator: MatPaginator;
-  sort: MatSort;
 
-  constructor() {
-    super();
-  }
 
+  export class Fecthdata extends DataSource<MCCPREPItem> {
+    data: MCCPREPItem[] = EXAMPLE_DATA;
+    paginator: MatPaginator;
+    sort: MatSort;
+  
+    constructor() {
+      super();
+    }
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.
