@@ -16,26 +16,51 @@
 
           <table class="table">
             <thead>
-                <tr >
-                  <th  class="flex-container3">MccPrepId</th>
-                  <th  class="flex-container4">PrcedenceOrder:</th> 
-                  <th  class="flex-container5">OwnershipOrganization</th>
-                  <th  class="flex-container6">UcmRecordIdentifier</th>
-                  <th  class="flex-container7">PrimarySubject:</th> 
-                  <th  class="flex-container8">PrimaryNpi</th>
-                  <th  class="flex-container9">MccMeetingDate</th>
-                  <th class="flex-container10">MccStatus</th> 
-                  <th  class="flex-container11">SpecialtyTypeName</th>
-                  <th  class="flex-container12">ActionDetail</th>
-                  <th  class="flex-container13">MccPrepIdassignedEntity</th> 
-                  <th  class="flex-container14">City</th>
-                  <th  class="flex-container15">SixMonthPaid</th>
-                  <th  class="flex-container16">TwelveMonthPaid</th> 
-                  <th  class="flex-container17">AmountOnPaymentFloor</th>
-                  <th  class="flex-container18">ExecutiveSummaryText</th>
-                  <th  class="flex-container19">Region</th> 
-                  <th  class="flex-container20">Notes</th>
-                  <th  class="flex-container21">Enrollment</th>
+                <tr  cdkDropList
+                (cdkDropListDropped)="onDrop($event)"
+               
+                [cdkDropListData]="reports.mccPrepDataList">
+                 
+                    <th   cdkDrag
+                    cdkDragLockAxis="x">MccPrepId</th>
+                    <th cdkDrag
+                    cdkDragLockAxis="x">PrcedenceOrder:</th> 
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">OwnershipOrganization</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">UcmRecordIdentifier</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">PrimarySubject:</th> 
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">PrimaryNpi</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">MccMeetingDate</th>
+                    <th cdkDrag
+                    cdkDragLockAxis="x">MccStatus</th> 
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">SpecialtyTypeName</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">ActionDetail</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">MccPrepIdassignedEntity</th> 
+                    
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">City</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">SixMonthPaid</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">TwelveMonthPaid</th> 
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">AmountOnPaymentFloor</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">ExecutiveSummaryText</th>
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">Region</th> 
+                    <th  cdkDrag
+                    cdkDragLockAxis="x">Notes</th>
+                    <th cdkDrag
+                    cdkDragLockAxis="x">Enrollment</th>
+             
                 </tr>
             </thead>
 
@@ -63,7 +88,15 @@
                     <td  class="flex-container15">{{mccprepdata.sixMonthPaid}}</td>
                     <td  class="flex-container16">{{mccprepdata.twelveMonthPaid}}</td>
                     <td  class="flex-container17">{{mccprepdata.amountOnPaymentFloor}}</td>
-                  <td  class="flex-container18">   </td>
+                    <TD class = "select">ExecutiveSummaryText (Repeated) >
+                      <select>    
+                        <option value="" selected disabled hidden>Select</option>
+                              <option value="ExecutiveSummaryText">{{mccprepdata.executiveSummaryText}}</option>
+                              
+                             
+                      </select>
+                      <TD ALIGN="center"></TD>
+                
                     <td  class="flex-container19">{{mccprepdata.region}}</td>
                     <td  class="flex-container20">{{mccprepdata.notes}}</td>
                     <td  class="flex-container21">{{mccprepdata.enrollment}}</td>
