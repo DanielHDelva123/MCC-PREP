@@ -16,50 +16,28 @@
 
           <table class="table">
             <thead>
-                <tr  cdkDropList
-                (cdkDropListDropped)="onDrop($event)"
-               
-                [cdkDropListData]="reports.mccPrepDataList">
+                <tr >
                  
-                    <th   cdkDrag
-                    cdkDragLockAxis="x">MccPrepId</th>
-                    <th cdkDrag
-                    cdkDragLockAxis="x">PrcedenceOrder:</th> 
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">OwnershipOrganization</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">UcmRecordIdentifier</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">PrimarySubject:</th> 
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">PrimaryNpi</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">MccMeetingDate</th>
-                    <th cdkDrag
-                    cdkDragLockAxis="x">MccStatus</th> 
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">SpecialtyTypeName</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">ActionDetail</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">MccPrepIdassignedEntity</th> 
+                    <th >MccPrepId</th>
+                    <th>PrcedenceOrder:</th> 
+                    <th>OwnershipOrganization</th>
+                    <th>UcmRecordIdentifier</th>
+                    <th >PrimarySubject:</th> 
+                    <th >PrimaryNpi</th>
+                    <th >MccMeetingDate</th>
+                    <th>MccStatus</th> 
+                    <th >SpecialtyTypeName</th>
+                    <th>ActionDetail</th>
+                    <th >MccPrepIdassignedEntity</th> 
                     
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">City</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">SixMonthPaid</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">TwelveMonthPaid</th> 
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">AmountOnPaymentFloor</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">ExecutiveSummaryText</th>
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">Region</th> 
-                    <th  cdkDrag
-                    cdkDragLockAxis="x">Notes</th>
-                    <th cdkDrag
-                    cdkDragLockAxis="x">Enrollment</th>
+                    <th>City</th>
+                    <th>SixMonthPaid</th>
+                    <th>TwelveMonthPaid</th> 
+                    <th>AmountOnPaymentFloor</th>
+                    <th>ExecutiveSummaryText</th>
+                    <th>Region</th> 
+                    <th >Notes</th>
+                    <th>Enrollment</th>
              
                 </tr>
             </thead>
