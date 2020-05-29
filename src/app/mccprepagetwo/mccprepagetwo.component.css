@@ -54,3 +54,13 @@
   
   }
   
+  .flex-container8{
+
+   flex-wrap: wrap;
+ 
+   width: 90px
+  }
+  .limit{
+    width:50px;
+    word-wrap: break-word;
+}

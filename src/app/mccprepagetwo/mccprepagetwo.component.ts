@@ -12,6 +12,7 @@ export class MccprepagetwoComponent implements OnInit {
   report: Reportpagetwovo [];
   oorg = '';
   reportorg: Reportpagetwovo [];
+  expand: string ='f';
   
   constructor(private mccservices: MccService) { }
 
@@ -24,7 +25,14 @@ export class MccprepagetwoComponent implements OnInit {
     .subscribe(data => this.report = data);
   }
 
-
+  setexpandtrue(): void {
+   this.expand = 't';
+  }
+  
+  setexpandfalse(): void {
+    this.expand = 'f';
+   }
+ 
 
   loadInitialSavedReportsdata2(): void {
     this.mccservices.getSavedReportsdataorg(this.oorg)

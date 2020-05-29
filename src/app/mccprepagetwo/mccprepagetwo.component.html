@@ -16,9 +16,9 @@
 
           <table class="table">
             <thead>
-                <tr >
-                 
-                    <th >MccPrepId</th>
+                <tr>
+                  <th></th>
+                <th >MccPrepId</th>
                     <th>PrcedenceOrder:</th> 
                     <th>OwnershipOrganization</th>
                     <th>UcmRecordIdentifier</th>
@@ -29,7 +29,6 @@
                     <th >SpecialtyTypeName</th>
                     <th>ActionDetail</th>
                     <th >MccPrepIdassignedEntity</th> 
-                    
                     <th>City</th>
                     <th>SixMonthPaid</th>
                     <th>TwelveMonthPaid</th> 
@@ -38,8 +37,7 @@
                     <th>Region</th> 
                     <th >Notes</th>
                     <th>Enrollment</th>
-             
-                </tr>
+                  </tr>
             </thead>
 
            
@@ -51,12 +49,17 @@
                 <tr *ngFor="let mccprepdata of reports.mccPrepDataList" 
                     cdkDrag
                     cdkDragLockAxis="y">
-                  <td>{{mccprepdata.mccPrepId}}</td>
+                    <td>
+                      <button (click) = "setexpandfalse()">-</button>
+                      <button (click)= "setexpandtrue()">+</button>
+
+                    </td>
+                    <td>{{mccprepdata.mccPrepId}}</td>
                     <td>{{mccprepdata.prcedenceOrder}}</td>
                     <td>{{mccprepdata.ownershipOrganization}}</td>
                     <td>{{mccprepdata.ucmRecordIdentifier}}</td>
                     <td>{{mccprepdata.primarySubject}}</td>
-                    <td  class="flex-container8">{{mccprepdata.primaryNpi}}</td>
+                    <td  >{{mccprepdata.primaryNpi}}</td>
                     <td  class="flex-container9">{{mccprepdata.mccMeetingDate}}</td>
                     <td  class="flex-container10">{{mccprepdata.mccStatus}}</td>
                     <td  class="flex-container11">{{mccprepdata.specialtyTypeName}}</td>
@@ -66,14 +69,10 @@
                     <td  class="flex-container15">{{mccprepdata.sixMonthPaid}}</td>
                     <td  class="flex-container16">{{mccprepdata.twelveMonthPaid}}</td>
                     <td  class="flex-container17">{{mccprepdata.amountOnPaymentFloor}}</td>
-                    <TD class = "select">ExecutiveSummaryText (Repeated) >
-                      <select>    
-                        <option value="" selected disabled hidden>Select</option>
-                              <option value="ExecutiveSummaryText">{{mccprepdata.executiveSummaryText}}</option>
-                              
-                             
-                      </select>
-                      <TD ALIGN="center"></TD>
+                    <td *ngIf = "expand == 'f'"></td>
+                    
+                  
+                      <td *ngIf = "expand == 't'"  colspan="18">  <option>{{mccprepdata.executiveSummaryText}}</option></td> 
                 
                     <td  class="flex-container19">{{mccprepdata.region}}</td>
                     <td  class="flex-container20">{{mccprepdata.notes}}</td>
@@ -81,7 +80,6 @@
                 </tr>
             </tbody>
         </table>
-
 
 
 
